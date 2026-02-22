@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeling sad — SafeHere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #faf8fc;
+      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #f5f0fa 50%, #fef8f0 100%);
+      --color-surface: #ffffff;
+      --color-text: #2d2a26;
+      --color-text-muted: #6b6560;
+      --color-accent: #b873c6;
+      --color-accent-soft: rgba(184, 115, 198, 0.15);
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-sans: 'Outfit', system-ui, sans-serif;
+      --radius: 24px;
+      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg-gradient);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+    .card {
+      max-width: 32rem;
+      width: 100%;
+      background: var(--color-surface);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(184, 115, 198, 0.15);
+    }
+    .card h1 {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 1.5rem;
+      color: var(--color-accent);
+    }
+    .quote {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--color-text);
+      margin: 0 0 1rem;
+      padding: 1.5rem;
+      background: var(--color-accent-soft);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--color-accent);
+    }
+    .ref {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+    .back {
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>💛 Feeling sad?</h1>
+    <p class="quote">“The Lord is close to the brokenhearted and saves those who are crushed in spirit.”</p>
+    <p class="ref">— Psalm 34:18</p>
+    <p style="color: var(--color-text-muted); margin-bottom: 0;">You matter. God sees you and is near. 💜</p>
+    <a href="index.html" class="back">← Back to SafeHere</a>
+  </div>
+</body>
+</html>

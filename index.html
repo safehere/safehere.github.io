@@ -9,19 +9,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-bg: #0f0f0f;
-      --color-surface: rgba(255, 255, 255, 0.04);
-      --color-surface-hover: rgba(255, 255, 255, 0.07);
-      --color-text: #e8e6e3;
-      --color-text-muted: #a8a6a1;
-      --color-accent: #d4a853;
-      --color-accent-soft: rgba(212, 168, 83, 0.2);
-      --color-blob-1: rgba(180, 140, 255, 0.25);
-      --color-blob-2: rgba(212, 168, 83, 0.2);
-      --color-blob-3: rgba(100, 180, 200, 0.15);
+      --color-bg: #faf8fc;
+      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #f5f0fa 50%, #fef8f0 100%);
+      --color-surface: #ffffff;
+      --color-surface-hover: #fffbf7;
+      --color-text: #2d2a26;
+      --color-text-muted: #6b6560;
+      --color-accent: #b873c6;
+      --color-accent-warm: #e8a84a;
+      --color-accent-soft: rgba(184, 115, 198, 0.18);
+      --color-blob-1: rgba(232, 168, 74, 0.35);
+      --color-blob-2: rgba(184, 115, 198, 0.25);
+      --color-blob-3: rgba(130, 200, 180, 0.3);
       --font-display: 'Instrument Serif', Georgia, serif;
       --font-sans: 'Outfit', system-ui, sans-serif;
-      --radius: 20px;
+      --radius: 24px;
+      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+      --shadow-hover: 0 8px 32px rgba(45, 42, 38, 0.08);
     }
 
     * {
@@ -46,7 +50,8 @@
       font-size: 1.05rem;
       line-height: 1.7;
       color: var(--color-text);
-      background: var(--color-bg);
+      background: var(--color-bg-gradient);
+      background-attachment: fixed;
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -126,15 +131,16 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 1px;
+      width: 2px;
       background: linear-gradient(
         to bottom,
         transparent,
-        var(--color-accent-soft) 20%,
-        var(--color-accent-soft) 80%,
+        var(--color-accent) 20%,
+        var(--color-accent) 80%,
         transparent
       );
-      opacity: 0.6;
+      opacity: 0.35;
+      border-radius: 2px;
     }
 
     .side-line--left {
@@ -175,6 +181,12 @@
       animation: fadeUp 0.8s ease-out;
     }
 
+    .logo-emoji {
+      display: inline-block;
+      margin-right: 0.15em;
+      vertical-align: middle;
+    }
+
     .tagline {
       font-family: var(--font-sans);
       font-size: 1.1rem;
@@ -202,15 +214,16 @@
       padding: 2rem 2.25rem;
       border-radius: var(--radius);
       margin-bottom: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(12px);
-      transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+      border: 1px solid rgba(184, 115, 198, 0.12);
+      box-shadow: var(--shadow);
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       animation: fadeUp 0.7s ease-out both;
     }
 
     main section:hover {
       background: var(--color-surface-hover);
-      border-color: rgba(212, 168, 83, 0.15);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(184, 115, 198, 0.2);
     }
 
     main section:nth-child(1) { animation-delay: 0.2s; }
@@ -223,9 +236,16 @@
       font-size: 1rem;
       font-weight: 600;
       color: var(--color-accent);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       margin: 0 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    main h2 .emoji {
+      font-style: normal;
     }
 
     main p {
@@ -251,9 +271,12 @@
       font-size: 1.15rem;
       font-style: italic;
       color: var(--color-text-muted);
-      border-left: 3px solid var(--color-accent-soft);
+      border-left: 4px solid var(--color-accent-soft);
       padding-left: 1.25rem;
       margin: 1.25rem 0;
+      background: rgba(184, 115, 198, 0.06);
+      padding: 1rem 1rem 1rem 1.25rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
     }
 
     footer {
@@ -272,6 +295,78 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    .help-section {
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.7s ease-out 0.1s both;
+    }
+
+    .help-section h2 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+      display: block;
+    }
+
+    .help-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .help-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      text-align: center;
+    }
+
+    .help-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .help-btn--talk {
+      background: linear-gradient(135deg, rgba(184, 115, 198, 0.15), rgba(184, 115, 198, 0.08));
+      color: var(--color-accent);
+      border-color: rgba(184, 115, 198, 0.35);
+    }
+
+    .help-btn--sad {
+      background: linear-gradient(135deg, rgba(232, 168, 74, 0.2), rgba(232, 168, 74, 0.08));
+      color: #c4862a;
+      border-color: rgba(232, 168, 74, 0.4);
+    }
+
+    .help-btn--danger {
+      background: linear-gradient(135deg, rgba(220, 80, 80, 0.15), rgba(220, 80, 80, 0.08));
+      color: #c03939;
+      border-color: rgba(220, 80, 80, 0.4);
+    }
+
+    @media (min-width: 480px) {
+      .help-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .help-btn {
+        flex: 1;
+        min-width: 160px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -288,36 +383,45 @@
 
   <div class="container">
     <header>
-      <h1 class="logo">SafeHere</h1>
-      <p class="tagline">Refuge and hope in Christ</p>
+      <h1 class="logo"><span class="logo-emoji" aria-hidden="true">✨</span> SafeHere</h1>
+      <p class="tagline">Refuge and hope in Christ 💛</p>
     </header>
+
+    <section class="help-section" aria-label="Quick help">
+      <h2>Need help?</h2>
+      <div class="help-buttons">
+        <a href="talk.html" class="help-btn help-btn--talk">📞 Need to talk to someone</a>
+        <a href="feeling-sad.html" class="help-btn help-btn--sad">💛 Feeling sad</a>
+        <a href="immediate-danger.html" class="help-btn help-btn--danger">🆘 In immediate danger right now</a>
+      </div>
+    </section>
 
     <main>
       <section>
-        <h2>Who we are</h2>
+        <h2><span class="emoji" aria-hidden="true">🌿</span> Who we are</h2>
         <p>SafeHere exists to meet people in their places of need—online, in the streets, wherever they are—and to point them to the Shepherd, with the same heart of compassion Jesus had for the harassed and helpless.</p>
-        <p class="verse">“When he saw the crowds, he had compassion on them, because they were harassed and helpless, like sheep without a shepherd.” — Matthew 9:36</p>
+        <p class="verse">“When he saw the crowds, he had compassion on them, because they were harassed and helpless, like sheep without a shepherd.” — Matthew 9:36 🙏</p>
       </section>
 
       <section>
-        <h2>What we do</h2>
+        <h2><span class="emoji" aria-hidden="true">💛</span> What we do</h2>
         <p>We offer the comfort and living hope we have received in Christ so that others in any affliction can find refuge and hope in him. We aim to be salt and light—a visible, tangible presence that preserves and illuminates—so that good works and clear pathways point to the Father and bring him glory.</p>
       </section>
 
       <section>
-        <h2>Our vision</h2>
+        <h2><span class="emoji" aria-hidden="true">🌟</span> Our vision</h2>
         <p>We envision a world where:</p>
         <ul class="vision-list">
           <li>The harassed and helpless are seen and met with compassion, through clear pathways from first contact to the gospel, to community, and to disciples who make disciples.</li>
           <li>People in affliction find comfort and living hope, so that no one who responds is left without a spiritual home or the hope of Christ.</li>
           <li>The body of Christ is visibly salt and light, shining before others so they see good works and glorify the Father.</li>
         </ul>
-        <p>We are sensitive first to the <strong>lost</strong>, the <strong>hopeless</strong>, and the <strong>seeking</strong>. We envision every such person finding a clear path to the Shepherd; every new believer connected to community; and discipleship happening in community, to the glory of God.</p>
+        <p>We are sensitive first to the <strong>lost</strong>, the <strong>hopeless</strong>, and the <strong>seeking</strong>. We envision every such person finding a clear path to the Shepherd; every new believer connected to community; and discipleship happening in community, to the glory of God. 🙌</p>
       </section>
     </main>
 
     <footer>
-      <p>SafeHere — <a href="https://safehere.net">safehere.net</a></p>
+      <p>SafeHere — <a href="https://safehere.net">safehere.net</a> ✨</p>
     </footer>
   </div>
 </body>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In immediate danger — SafeHere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #faf8fc;
+      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #fef5f5 50%, #fef8f0 100%);
+      --color-surface: #ffffff;
+      --color-text: #2d2a26;
+      --color-text-muted: #6b6560;
+      --color-danger: #c03939;
+      --color-danger-soft: rgba(192, 57, 57, 0.12);
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-sans: 'Outfit', system-ui, sans-serif;
+      --radius: 24px;
+      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg-gradient);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+    .card {
+      max-width: 28rem;
+      width: 100%;
+      background: var(--color-surface);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 2px solid var(--color-danger-soft);
+      text-align: center;
+    }
+    .card h1 {
+      font-family: var(--font-sans);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: var(--color-danger);
+    }
+    .card .subtitle {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .phone {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-danger);
+      letter-spacing: 0.05em;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: var(--color-danger-soft);
+      border-radius: var(--radius);
+    }
+    .phone a {
+      color: var(--color-danger);
+      text-decoration: none;
+    }
+    .phone a:hover {
+      text-decoration: underline;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🆘 In immediate danger right now?</h1>
+    <p class="subtitle">Please call emergency services right away.</p>
+    <p class="phone"><a href="tel:911">911</a></p>
+    <p class="subtitle" style="margin-bottom:0;">Call 911 for police, fire, or medical emergency. You are not alone. 💛</p>
+    <a href="index.html" class="back">← Back to SafeHere</a>
+  </div>
+</body>
+</html>
