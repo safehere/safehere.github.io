@@ -10,18 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-bg: #faf8fc;
-      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #fef5f5 50%, #fef8f0 100%);
+      --color-bg: #f5f5f3;
       --color-surface: #ffffff;
-      --color-text: #2d2a26;
-      --color-text-muted: #6b6560;
-      --color-accent: #b873c6;
-      --color-danger: #c03939;
-      --color-danger-soft: rgba(192, 57, 57, 0.12);
+      --color-text: #1e2328;
+      --color-text-muted: #5f6b7a;
+      --color-accent: #3d6b5e;
+      --color-danger: #9b3232;
+      --color-danger-soft: rgba(155, 50, 50, 0.08);
+      --color-border: rgba(30, 35, 40, 0.08);
       --font-display: 'Instrument Serif', Georgia, serif;
       --font-sans: 'Outfit', system-ui, sans-serif;
-      --radius: 24px;
-      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     }
     * { box-sizing: border-box; }
     body {
@@ -30,8 +30,7 @@
       font-size: 1.05rem;
       line-height: 1.7;
       color: var(--color-text);
-      background: var(--color-bg-gradient);
-      background-attachment: fixed;
+      background: var(--color-bg);
       min-height: 100vh;
     }
     .container {
@@ -39,13 +38,22 @@
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
     }
+    .back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { text-decoration: underline; }
     header {
       text-align: center;
-      padding: 3rem 0 1.5rem;
+      padding: 2rem 0 1.5rem;
     }
     header h1 {
       font-family: var(--font-sans);
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--color-danger);
       margin: 0;
@@ -53,32 +61,37 @@
     header p {
       color: var(--color-text-muted);
       margin-top: 0.5rem;
+      font-size: 0.95rem;
     }
-    .emergency-card {
+    .card {
       background: var(--color-surface);
-      padding: 2rem;
+      padding: 1.75rem 2rem;
       border-radius: var(--radius);
-      border: 2px solid var(--color-danger-soft);
+      border: 1px solid var(--color-border);
       box-shadow: var(--shadow);
-      text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
-    .emergency-card h2 {
+    .card--danger {
+      border-color: rgba(155, 50, 50, 0.2);
+      text-align: center;
+    }
+    .card h2 {
       font-family: var(--font-sans);
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--color-danger);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin: 0 0 1rem;
     }
+    .card--danger h2 { color: var(--color-danger); }
+    .card h2 { color: var(--color-accent); }
     .phone {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--color-danger);
-      letter-spacing: 0.05em;
-      margin: 1rem 0;
-      padding: 1rem;
+      letter-spacing: 0.03em;
+      margin: 0.75rem 0;
+      padding: 0.75rem;
       background: var(--color-danger-soft);
       border-radius: var(--radius);
     }
@@ -87,35 +100,18 @@
       text-decoration: none;
     }
     .phone a:hover { text-decoration: underline; }
-    .hotline-card {
-      background: var(--color-surface);
-      padding: 2rem;
-      border-radius: var(--radius);
-      border: 1px solid rgba(184, 115, 198, 0.12);
-      box-shadow: var(--shadow);
-      margin-bottom: 1.5rem;
-    }
-    .hotline-card h2 {
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 1rem;
-    }
-    .hotline-item {
-      margin-bottom: 1rem;
-    }
+    .hotline-item { margin-bottom: 1rem; }
     .hotline-item:last-child { margin-bottom: 0; }
     .hotline-item .name {
       font-weight: 600;
       color: var(--color-text);
+      margin: 0;
     }
     .hotline-item .number {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--color-accent);
+      margin: 0.25rem 0 0;
     }
     .hotline-item .number a {
       color: var(--color-accent);
@@ -124,19 +120,23 @@
     .hotline-item .number a:hover { text-decoration: underline; }
     .reassurance {
       text-align: center;
-      background: var(--color-surface);
-      padding: 1.5rem 2rem;
-      border-radius: var(--radius);
-      border: 1px solid rgba(184, 115, 198, 0.12);
-      box-shadow: var(--shadow);
-      margin-bottom: 1.5rem;
       color: var(--color-text-muted);
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
+    .reassurance p { margin: 0 0 0.5rem; }
+    .cta-link {
+      display: block;
+      text-align: center;
+      color: var(--color-accent);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .cta-link:hover { text-decoration: underline; }
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--color-text-muted);
     }
     footer a {
@@ -144,15 +144,6 @@
       text-decoration: none;
     }
     footer a:hover { text-decoration: underline; }
-    .back {
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: var(--color-accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .back:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -164,13 +155,13 @@
       <p>Please reach out for help right now.</p>
     </header>
 
-    <div class="emergency-card">
+    <div class="card card--danger">
       <h2>Emergency Services</h2>
       <p>Call emergency services right away for police, fire, or medical emergency.</p>
       <p class="phone"><a href="tel:911">911</a></p>
     </div>
 
-    <div class="hotline-card">
+    <div class="card">
       <h2>Crisis Hotlines</h2>
       <div class="hotline-item">
         <p class="name">NCMH Crisis Hotline</p>
@@ -182,14 +173,14 @@
       </div>
     </div>
 
-    <div class="reassurance">
+    <div class="card reassurance">
       <p>If you can, please go to your nearest emergency room.</p>
       <p><strong>You are not alone.</strong></p>
     </div>
 
-    <div class="hotline-card" style="text-align: center;">
-      <p>When you're ready, we're here for you too.</p>
-      <a href="/crisis/" style="color: var(--color-accent); font-weight: 600;">Talk to SafeHere &rarr;</a>
+    <div class="card" style="text-align: center;">
+      <p style="margin: 0 0 0.5rem;">When you're ready, we're here for you too.</p>
+      <a href="/crisis/" class="cta-link">Talk to SafeHere &rarr;</a>
     </div>
 
     <footer>

@@ -11,18 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-bg: #faf8fc;
-      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #f5f0fa 50%, #fef8f0 100%);
+      --color-bg: #f5f5f3;
       --color-surface: #ffffff;
-      --color-text: #2d2a26;
-      --color-text-muted: #6b6560;
-      --color-accent: #b873c6;
-      --color-accent-soft: rgba(184, 115, 198, 0.18);
-      --color-danger: #c03939;
+      --color-text: #1e2328;
+      --color-text-muted: #5f6b7a;
+      --color-accent: #3d6b5e;
+      --color-accent-soft: rgba(61, 107, 94, 0.12);
+      --color-accent-warm: #8b6f47;
+      --color-danger: #9b3232;
+      --color-border: rgba(30, 35, 40, 0.08);
       --font-display: 'Instrument Serif', Georgia, serif;
       --font-sans: 'Outfit', system-ui, sans-serif;
-      --radius: 24px;
-      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -32,8 +33,7 @@
       font-size: 1.05rem;
       line-height: 1.7;
       color: var(--color-text);
-      background: var(--color-bg-gradient);
-      background-attachment: fixed;
+      background: var(--color-bg);
       min-height: 100vh;
     }
     .container {
@@ -41,34 +41,40 @@
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
     }
+    .back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { text-decoration: underline; }
     header {
       text-align: center;
-      padding: 3rem 0 1rem;
+      padding: 2rem 0 1rem;
     }
     header h1 {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 400;
       color: var(--color-text);
       margin: 0;
     }
     .verse {
       font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-style: italic;
       color: var(--color-text-muted);
-      border-left: 4px solid var(--color-accent-soft);
-      margin: 1.5rem 0 2rem;
-      background: rgba(184, 115, 198, 0.06);
-      padding: 1rem 1rem 1rem 1.25rem;
-      border-radius: 0 var(--radius) var(--radius) 0;
-      text-align: left;
+      border-left: 3px solid var(--color-accent-soft);
+      margin: 1.5rem 0 1rem;
+      padding: 0.75rem 1rem 0.75rem 1.25rem;
     }
     .verse-ref {
       display: block;
       font-style: normal;
       font-family: var(--font-sans);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--color-text-muted);
       margin-top: 0.5rem;
     }
@@ -76,6 +82,7 @@
       text-align: center;
       color: var(--color-text-muted);
       margin-bottom: 2rem;
+      font-size: 0.95rem;
     }
     .actions {
       display: flex;
@@ -84,49 +91,45 @@
     }
     .action-btn {
       display: block;
-      padding: 1.25rem 1.5rem;
+      padding: 1rem 1.5rem;
       font-family: var(--font-sans);
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none;
       border-radius: var(--radius);
-      border: 2px solid transparent;
+      border: 1px solid var(--color-border);
       text-align: center;
+      background: var(--color-surface);
+      box-shadow: var(--shadow);
+      cursor: pointer;
     }
     .action-btn--primary {
-      background: linear-gradient(135deg, rgba(184, 115, 198, 0.2), rgba(184, 115, 198, 0.1));
       color: var(--color-accent);
-      border-color: rgba(184, 115, 198, 0.4);
+      border-color: var(--color-accent);
     }
     .action-btn--primary .recommended {
       display: block;
       font-size: 0.8rem;
       font-weight: 400;
       color: var(--color-text-muted);
-      margin-top: 0.25rem;
+      margin-top: 0.2rem;
     }
     .action-btn--secondary {
-      background: linear-gradient(135deg, rgba(232, 168, 74, 0.15), rgba(232, 168, 74, 0.06));
-      color: #c4862a;
-      border-color: rgba(232, 168, 74, 0.35);
+      color: var(--color-accent-warm);
     }
     .action-btn--danger {
-      background: linear-gradient(135deg, rgba(220, 80, 80, 0.12), rgba(220, 80, 80, 0.05));
       color: var(--color-danger);
-      border-color: rgba(220, 80, 80, 0.35);
     }
     .action-btn--muted {
-      background: rgba(107, 101, 96, 0.06);
       color: var(--color-text-muted);
-      border-color: rgba(107, 101, 96, 0.15);
     }
     .phone-reveal {
       display: none;
       text-align: center;
       background: var(--color-surface);
-      padding: 1.5rem;
+      padding: 1.25rem;
       border-radius: var(--radius);
-      border: 1px solid rgba(184, 115, 198, 0.12);
+      border: 1px solid var(--color-border);
       box-shadow: var(--shadow);
       margin-top: 0.75rem;
     }
@@ -134,17 +137,17 @@
     .phone-reveal p {
       margin: 0 0 0.5rem;
       color: var(--color-text-muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .phone-reveal .number {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--color-accent);
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--color-text-muted);
     }
     footer a {
@@ -152,15 +155,6 @@
       text-decoration: none;
     }
     footer a:hover { text-decoration: underline; }
-    .back {
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: var(--color-accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .back:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -173,7 +167,7 @@
 
     <p class="verse">
       "The Lord is close to the brokenhearted and saves those who are crushed in spirit."
-      <span class="verse-ref">— Psalm 34:18</span>
+      <span class="verse-ref">Psalm 34:18</span>
     </p>
 
     <p class="reassurance">You matter. God sees you and is near.</p>

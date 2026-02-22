@@ -11,16 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-bg: #faf8fc;
-      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #f5f0fa 50%, #fef8f0 100%);
+      --color-bg: #f5f5f3;
       --color-surface: #ffffff;
-      --color-text: #2d2a26;
-      --color-text-muted: #6b6560;
-      --color-accent: #b873c6;
+      --color-text: #1e2328;
+      --color-text-muted: #5f6b7a;
+      --color-accent: #3d6b5e;
+      --color-border: rgba(30, 35, 40, 0.08);
       --font-display: 'Instrument Serif', Georgia, serif;
       --font-sans: 'Outfit', system-ui, sans-serif;
-      --radius: 24px;
-      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -30,22 +30,30 @@
       font-size: 1.05rem;
       line-height: 1.7;
       color: var(--color-text);
-      background: var(--color-bg-gradient);
-      background-attachment: fixed;
+      background: var(--color-bg);
       min-height: 100vh;
     }
     .container {
-      max-width: 44rem;
+      max-width: 42rem;
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
     }
+    .back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { text-decoration: underline; }
     header {
       text-align: center;
-      padding: 3rem 0 2rem;
+      padding: 2rem 0 2rem;
     }
     header h1 {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 400;
       color: var(--color-text);
       margin: 0;
@@ -53,38 +61,13 @@
     header p {
       color: var(--color-text-muted);
       margin-top: 0.5rem;
-    }
-    .topics-grid {
-      display: grid;
-      gap: 1rem;
-    }
-    .topic-card {
-      background: var(--color-surface);
-      padding: 1.75rem 2rem;
-      border-radius: var(--radius);
-      border: 1px solid rgba(184, 115, 198, 0.12);
-      box-shadow: var(--shadow);
-      text-decoration: none;
-      color: var(--color-text);
-      display: block;
-    }
-    .topic-card h2 {
-      font-family: var(--font-sans);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      margin: 0 0 0.5rem;
-    }
-    .topic-card p {
-      margin: 0;
-      color: var(--color-text-muted);
       font-size: 0.95rem;
     }
     .placeholder {
       background: var(--color-surface);
       padding: 2.5rem 2rem;
       border-radius: var(--radius);
-      border: 1px solid rgba(184, 115, 198, 0.12);
+      border: 1px solid var(--color-border);
       box-shadow: var(--shadow);
       text-align: center;
       color: var(--color-text-muted);
@@ -93,7 +76,7 @@
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--color-text-muted);
     }
     footer a {
@@ -101,15 +84,6 @@
       text-decoration: none;
     }
     footer a:hover { text-decoration: underline; }
-    .back {
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: var(--color-accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .back:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
