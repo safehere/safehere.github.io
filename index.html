@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SafeHere — Refuge and hope in Christ</title>
+  <meta name="description" content="SafeHere is a safe place for the lost, the hopeless, and those at the edge of life — pointing them to Jesus Christ the Living Hope, connecting them to church and community.">
+  <link rel="canonical" href="https://safehere.net/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -12,37 +14,20 @@
       --color-bg: #faf8fc;
       --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #f5f0fa 50%, #fef8f0 100%);
       --color-surface: #ffffff;
-      --color-surface-hover: #fffbf7;
       --color-text: #2d2a26;
       --color-text-muted: #6b6560;
       --color-accent: #b873c6;
       --color-accent-warm: #e8a84a;
       --color-accent-soft: rgba(184, 115, 198, 0.18);
-      --color-blob-1: rgba(232, 168, 74, 0.35);
-      --color-blob-2: rgba(184, 115, 198, 0.25);
-      --color-blob-3: rgba(130, 200, 180, 0.3);
       --font-display: 'Instrument Serif', Georgia, serif;
       --font-sans: 'Outfit', system-ui, sans-serif;
       --radius: 24px;
       --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
-      --shadow-hover: 0 8px 32px rgba(45, 42, 38, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -53,114 +38,9 @@
       background: var(--color-bg-gradient);
       background-attachment: fixed;
       min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Side animated orbs */
-    .side-orbs {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.7;
-    }
-
-    .orb--left-1 {
-      width: 320px;
-      height: 320px;
-      background: var(--color-blob-1);
-      top: 10%;
-      left: -120px;
-      animation: float 18s ease-in-out infinite;
-    }
-
-    .orb--left-2 {
-      width: 240px;
-      height: 240px;
-      background: var(--color-blob-2);
-      top: 50%;
-      left: -80px;
-      animation: float 14s ease-in-out infinite 2s;
-    }
-
-    .orb--right-1 {
-      width: 280px;
-      height: 280px;
-      background: var(--color-blob-3);
-      top: 25%;
-      right: -100px;
-      animation: float 16s ease-in-out infinite 1s;
-    }
-
-    .orb--right-2 {
-      width: 200px;
-      height: 200px;
-      background: var(--color-blob-2);
-      bottom: 20%;
-      right: -60px;
-      animation: float 12s ease-in-out infinite 3s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(20px, -30px) scale(1.05); }
-      66% { transform: translate(-15px, 20px) scale(0.95); }
-    }
-
-    /* Side line decorations */
-    .side-lines {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .side-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--color-accent) 20%,
-        var(--color-accent) 80%,
-        transparent
-      );
-      opacity: 0.35;
-      border-radius: 2px;
-    }
-
-    .side-line--left {
-      left: 24px;
-      animation: linePulse 4s ease-in-out infinite;
-    }
-
-    .side-line--right {
-      right: 24px;
-      animation: linePulse 4s ease-in-out infinite 2s;
-    }
-
-    @keyframes linePulse {
-      0%, 100% { opacity: 0.4; transform: scaleY(0.98); }
-      50% { opacity: 0.7; transform: scaleY(1); }
     }
 
     .container {
-      position: relative;
-      z-index: 1;
       max-width: 44rem;
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
@@ -178,13 +58,6 @@
       color: var(--color-text);
       letter-spacing: 0.02em;
       margin: 0;
-      animation: fadeUp 0.8s ease-out;
-    }
-
-    .logo-emoji {
-      display: inline-block;
-      margin-right: 0.15em;
-      vertical-align: middle;
     }
 
     .tagline {
@@ -195,18 +68,6 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-top: 0.75rem;
-      animation: fadeUp 0.8s ease-out 0.15s both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     main section {
@@ -216,20 +77,7 @@
       margin-bottom: 1.5rem;
       border: 1px solid rgba(184, 115, 198, 0.12);
       box-shadow: var(--shadow);
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      animation: fadeUp 0.7s ease-out both;
     }
-
-    main section:hover {
-      background: var(--color-surface-hover);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(184, 115, 198, 0.2);
-    }
-
-    main section:nth-child(1) { animation-delay: 0.2s; }
-    main section:nth-child(2) { animation-delay: 0.35s; }
-    main section:nth-child(3) { animation-delay: 0.5s; }
-    main section:nth-child(4) { animation-delay: 0.65s; }
 
     main h2 {
       font-family: var(--font-sans);
@@ -244,27 +92,21 @@
       gap: 0.5rem;
     }
 
-    main h2 .emoji {
-      font-style: normal;
-    }
+    main h2 .emoji { font-style: normal; }
 
     main p {
       margin: 0 0 1rem;
       color: var(--color-text);
     }
 
-    main p:last-child {
-      margin-bottom: 0;
-    }
+    main p:last-child { margin-bottom: 0; }
 
     .vision-list {
       margin: 0 0 1rem;
       padding-left: 1.25rem;
     }
 
-    .vision-list li {
-      margin-bottom: 0.6rem;
-    }
+    .vision-list li { margin-bottom: 0.6rem; }
 
     .verse {
       font-family: var(--font-display);
@@ -272,7 +114,6 @@
       font-style: italic;
       color: var(--color-text-muted);
       border-left: 4px solid var(--color-accent-soft);
-      padding-left: 1.25rem;
       margin: 1.25rem 0;
       background: rgba(184, 115, 198, 0.06);
       padding: 1rem 1rem 1rem 1.25rem;
@@ -284,7 +125,6 @@
       padding: 2.5rem 1rem;
       font-size: 0.9rem;
       color: var(--color-text-muted);
-      animation: fadeUp 0.7s ease-out 0.8s both;
     }
 
     footer a {
@@ -292,14 +132,9 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
 
-    .help-section {
-      margin-bottom: 2.5rem;
-      animation: fadeUp 0.7s ease-out 0.1s both;
-    }
+    .help-section { margin-bottom: 2.5rem; }
 
     .help-section h2 {
       font-family: var(--font-sans);
@@ -330,13 +165,7 @@
       text-decoration: none;
       border-radius: var(--radius);
       border: 2px solid transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       text-align: center;
-    }
-
-    .help-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
     }
 
     .help-btn--talk {
@@ -370,29 +199,17 @@
   </style>
 </head>
 <body>
-  <div class="side-orbs" aria-hidden="true">
-    <div class="orb orb--left-1"></div>
-    <div class="orb orb--left-2"></div>
-    <div class="orb orb--right-1"></div>
-    <div class="orb orb--right-2"></div>
-  </div>
-  <div class="side-lines" aria-hidden="true">
-    <div class="side-line side-line--left"></div>
-    <div class="side-line side-line--right"></div>
-  </div>
-
   <div class="container">
     <header>
-      <h1 class="logo"><span class="logo-emoji" aria-hidden="true">✨</span> SafeHere</h1>
-      <p class="tagline">Refuge and hope in Christ 💛</p>
+      <h1 class="logo">SafeHere</h1>
+      <p class="tagline">Refuge and hope in Christ</p>
     </header>
 
-    <section class="help-section" aria-label="Quick help">
-      <h2>Need help?</h2>
+    <section class="help-section" aria-label="Quick navigation">
       <div class="help-buttons">
-        <a href="talk.html" class="help-btn help-btn--talk">📞 Need to talk to someone</a>
-        <a href="feeling-sad.html" class="help-btn help-btn--sad">💛 Feeling sad</a>
-        <a href="immediate-danger.html" class="help-btn help-btn--danger">🆘 In immediate danger right now</a>
+        <a href="/topics/" class="help-btn help-btn--talk">Explore topics</a>
+        <a href="/crisis/" class="help-btn help-btn--sad">Need help now</a>
+        <a href="/about/" class="help-btn help-btn--talk">About us</a>
       </div>
     </section>
 
@@ -400,7 +217,7 @@
       <section>
         <h2><span class="emoji" aria-hidden="true">🌿</span> Who we are</h2>
         <p>SafeHere exists to meet people in their places of need—online, in the streets, wherever they are—and to point them to the Shepherd, with the same heart of compassion Jesus had for the harassed and helpless.</p>
-        <p class="verse">“When he saw the crowds, he had compassion on them, because they were harassed and helpless, like sheep without a shepherd.” — Matthew 9:36 🙏</p>
+        <p class="verse">"When he saw the crowds, he had compassion on them, because they were harassed and helpless, like sheep without a shepherd." — Matthew 9:36</p>
       </section>
 
       <section>
@@ -416,12 +233,12 @@
           <li>People in affliction find comfort and living hope, so that no one who responds is left without a spiritual home or the hope of Christ.</li>
           <li>The body of Christ is visibly salt and light, shining before others so they see good works and glorify the Father.</li>
         </ul>
-        <p>We are sensitive first to the <strong>lost</strong>, the <strong>hopeless</strong>, and the <strong>seeking</strong>. We envision every such person finding a clear path to the Shepherd; every new believer connected to community; and discipleship happening in community, to the glory of God. 🙌</p>
+        <p>We are sensitive first to the <strong>lost</strong>, the <strong>hopeless</strong>, and the <strong>seeking</strong>. We envision every such person finding a clear path to the Shepherd; every new believer connected to community; and discipleship happening in community, to the glory of God.</p>
       </section>
     </main>
 
     <footer>
-      <p>SafeHere — <a href="https://safehere.net">safehere.net</a> ✨</p>
+      <p>SafeHere — <a href="https://safehere.net">safehere.net</a></p>
     </footer>
   </div>
 </body>

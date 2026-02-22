@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topics — SafeHere</title>
+  <meta name="description" content="Explore topics about life, hope, and faith. SafeHere offers a safe space to discover what matters most.">
+  <link rel="canonical" href="https://safehere.net/topics/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #faf8fc;
+      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #f5f0fa 50%, #fef8f0 100%);
+      --color-surface: #ffffff;
+      --color-text: #2d2a26;
+      --color-text-muted: #6b6560;
+      --color-accent: #b873c6;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-sans: 'Outfit', system-ui, sans-serif;
+      --radius: 24px;
+      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg-gradient);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 400;
+      color: var(--color-text);
+      margin: 0;
+    }
+    header p {
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+    }
+    .topics-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .topic-card {
+      background: var(--color-surface);
+      padding: 1.75rem 2rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(184, 115, 198, 0.12);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: var(--color-text);
+      display: block;
+    }
+    .topic-card h2 {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin: 0 0 0.5rem;
+    }
+    .topic-card p {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+    .placeholder {
+      background: var(--color-surface);
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(184, 115, 198, 0.12);
+      box-shadow: var(--shadow);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+    .back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back">&larr; Back to SafeHere</a>
+
+    <header>
+      <h1>Topics</h1>
+      <p>Explore topics about life, hope, and faith</p>
+    </header>
+
+    <div class="placeholder">
+      <p>Topics are coming soon. We're preparing content to help you explore life's biggest questions.</p>
+    </div>
+
+    <footer>
+      <p>SafeHere — <a href="https://safehere.net">safehere.net</a></p>
+    </footer>
+  </div>
+</body>
+</html>

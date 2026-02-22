@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're not alone — SafeHere</title>
+  <meta name="description" content="If you're going through a difficult time, SafeHere is here for you. Reach out, learn more, or get immediate help.">
+  <link rel="canonical" href="https://safehere.net/crisis/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #faf8fc;
+      --color-bg-gradient: linear-gradient(135deg, #faf8fc 0%, #f5f0fa 50%, #fef8f0 100%);
+      --color-surface: #ffffff;
+      --color-text: #2d2a26;
+      --color-text-muted: #6b6560;
+      --color-accent: #b873c6;
+      --color-accent-soft: rgba(184, 115, 198, 0.18);
+      --color-danger: #c03939;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-sans: 'Outfit', system-ui, sans-serif;
+      --radius: 24px;
+      --shadow: 0 4px 24px rgba(45, 42, 38, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg-gradient);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 36rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 0 1rem;
+    }
+    header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 400;
+      color: var(--color-text);
+      margin: 0;
+    }
+    .verse {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--color-text-muted);
+      border-left: 4px solid var(--color-accent-soft);
+      margin: 1.5rem 0 2rem;
+      background: rgba(184, 115, 198, 0.06);
+      padding: 1rem 1rem 1rem 1.25rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      text-align: left;
+    }
+    .verse-ref {
+      display: block;
+      font-style: normal;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+    }
+    .reassurance {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .action-btn {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      text-align: center;
+    }
+    .action-btn--primary {
+      background: linear-gradient(135deg, rgba(184, 115, 198, 0.2), rgba(184, 115, 198, 0.1));
+      color: var(--color-accent);
+      border-color: rgba(184, 115, 198, 0.4);
+    }
+    .action-btn--primary .recommended {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+    }
+    .action-btn--secondary {
+      background: linear-gradient(135deg, rgba(232, 168, 74, 0.15), rgba(232, 168, 74, 0.06));
+      color: #c4862a;
+      border-color: rgba(232, 168, 74, 0.35);
+    }
+    .action-btn--danger {
+      background: linear-gradient(135deg, rgba(220, 80, 80, 0.12), rgba(220, 80, 80, 0.05));
+      color: var(--color-danger);
+      border-color: rgba(220, 80, 80, 0.35);
+    }
+    .action-btn--muted {
+      background: rgba(107, 101, 96, 0.06);
+      color: var(--color-text-muted);
+      border-color: rgba(107, 101, 96, 0.15);
+    }
+    .phone-reveal {
+      display: none;
+      text-align: center;
+      background: var(--color-surface);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(184, 115, 198, 0.12);
+      box-shadow: var(--shadow);
+      margin-top: 0.75rem;
+    }
+    .phone-reveal.visible { display: block; }
+    .phone-reveal p {
+      margin: 0 0 0.5rem;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+    .phone-reveal .number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+    .back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back">&larr; Back to SafeHere</a>
+
+    <header>
+      <h1>You're not alone</h1>
+    </header>
+
+    <p class="verse">
+      "The Lord is close to the brokenhearted and saves those who are crushed in spirit."
+      <span class="verse-ref">— Psalm 34:18</span>
+    </p>
+
+    <p class="reassurance">You matter. God sees you and is near.</p>
+
+    <div class="actions">
+      <a href="#" class="action-btn action-btn--primary">
+        Reach out to me
+        <span class="recommended">Recommended — we'd love to connect with you</span>
+      </a>
+
+      <a href="/topics/" class="action-btn action-btn--secondary">
+        I don't want to talk, but I want to learn more
+      </a>
+
+      <a href="/emergency/" class="action-btn action-btn--danger">
+        I'm in danger
+      </a>
+
+      <button type="button" class="action-btn action-btn--muted" onclick="document.getElementById('phone-section').classList.toggle('visible')">
+        I'll think about it
+      </button>
+
+      <div id="phone-section" class="phone-reveal">
+        <p>Whenever you're ready, you can reach us at:</p>
+        <p class="number">TBD</p>
+        <p>Call or text anytime.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>SafeHere — <a href="https://safehere.net">safehere.net</a></p>
+    </footer>
+  </div>
+</body>
+</html>
